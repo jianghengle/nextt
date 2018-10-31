@@ -276,7 +276,6 @@ export default {
 <style lang="scss" scoped>
 
 .status-section {
-  padding-top: 100px;
   padding-bottom: 100px;
 }
 

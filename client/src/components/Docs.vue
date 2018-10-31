@@ -75,7 +75,7 @@ export default {
       vm.pdf.getPage(vm.page).then(function(page) {
         var el = document.getElementById('docs-container')
         var windowWidth = el.offsetWidth
-        var containerWidth = windowWidth - 300
+        var containerWidth = windowWidth - 264
         if(windowWidth <= 768){
           containerWidth = windowWidth
         }
@@ -167,6 +167,10 @@ export default {
   padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.page-input {
+  width: 80px;
 }
 
 </style>
