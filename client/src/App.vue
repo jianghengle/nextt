@@ -29,6 +29,8 @@ $navbar-height: 84px;
 
 .my-section {
   min-height: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 </style>
