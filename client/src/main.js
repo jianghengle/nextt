@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
+
 
 import 'vue-awesome/icons/sign-out'
 import 'vue-awesome/icons/sign-in'

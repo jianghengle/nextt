@@ -74,7 +74,7 @@ var ofh = {
   status: 99,
   description: 'UHF Antenna Array Replaced, GPS Antenna Installed.',
   tests: [100, 100, 100, 100, 100, 100, 100, 100, 80, 100, 100, 100, 80, 0, 20],
-  image: 'static/ofh.png'
+  image: 'static/images/ofh.png'
 }
 
 var wesc = {
@@ -83,7 +83,7 @@ var wesc = {
   status: 95,
   description: 'Radio Antenna Head/Cable Conduit/RF Cable done. Fiber/Ethernet (media converter) installed.',
   tests: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 0, 0],
-  image: 'static/wsec.png'
+  image: 'static/images/wsec.png'
 }
 
 var ah = {
@@ -92,7 +92,7 @@ var ah = {
   status: 90,
   description: 'Antenna head installed.',
   tests: [100, 100, 100, 100, 100, 100, 100, 100, 60, 100, 100, 0, 0, 0, 0],
-  image: 'static/ah.png'
+  image: 'static/images/ah.png'
 }
 
 var avtl = {
@@ -101,7 +101,7 @@ var avtl = {
   status: 15,
   description: 'Separated radio and antenna enclosures hanging on pole.',
   tests: [100, 100, 90, 80, 100, 90, 0, 0, 80, 0, 0, 0, 0, 0, 0],
-  image: 'static/avtl.png'
+  image: 'static/images/avtl.png'
 }
 
 var fic = {
@@ -110,7 +110,7 @@ var fic = {
   status: 90,
   description: 'Fiber & 6U Cabinet installed.',
   tests: [100, 100, 100, 100, 100, 100, 100, 100, 60, 100, 100, 0, 0, 0, 0],
-  image: 'static/fic.png'
+  image: 'static/images/fic.png'
 }
 
 var nema = {
@@ -119,7 +119,7 @@ var nema = {
   status: 0,
   description: 'mmWave Link to FIC',
   tests: [100, 100, 100, 100, 100, 100, 100, 100, 60, 100, 100, 0, 0, 0, 0],
-  image: 'static/nema.png'
+  image: 'static/images/nema.png'
 }
 
 var hub = {

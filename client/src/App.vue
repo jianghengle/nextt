@@ -33,4 +33,11 @@ $navbar-height: 84px;
   padding-right: 10px;
 }
 
+a.anchor {
+  display: block;
+  position: relative;
+  top: -130px;
+  visibility: hidden;
+}
+
 </style>

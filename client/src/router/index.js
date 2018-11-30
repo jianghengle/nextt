@@ -17,5 +17,6 @@ export default new Router({
       name: 'Docs',
       component: Docs
     },
+    { path: '*', redirect: '/docs' }
   ]
 })

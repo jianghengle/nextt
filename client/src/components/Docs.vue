@@ -2,41 +2,35 @@
   <div class="my-section">
     <div id="docs-container" class="container docs-container">
       <div class="columns">
-        <div class="column is-narrow">
+        <div class="column">
           <aside class="menu sider-bar">
+            <p class="menu-label">
+              Tutorials
+            </p>
+            <ul class="menu-list">
+              <li>
+                <a @click="scrollToElement('getStarted')">Get Started</a>
+              </li>
+            </ul>
             <p class="menu-label">
               Lectures
             </p>
             <ul class="menu-list">
               <li>
-                <a @click="scrollToElement('lecture1')"> CoSeC-RAN Pilot Project Documentation</a>
+                <a @click="scrollToElement('manual')">NEXTT Research User Manual</a>
               </li>
             </ul>
           </aside>
         </div>
-        <div class="column">
-          <div class="main-container">
-            <div class="content text-content">
-              <h4 id="lecture1" class="title is-3">CoSeC-RAN Pilot Project Documentation
-                <a href="static/slides.pdf" class="button is-text" download>link</a>
-              </h4>
-              <canvas id="the-canvas"></canvas>
-              <div class="field has-addons has-addons-centered page-buttons">
-                <p class="control">
-                  <a class="button is-medium" @click="previousPage" :disabled="page == 1 || rendering">
-                    <icon name="chevron-left"></icon>
-                  </a>
-                </p>
-                <p class="control">
-                  <input class="input is-medium page-input" type="text" placeholder="Page Number" v-model="pageLabel" @blur="setPage" @keyup.enter="setPage">
-                </p>
-                <p class="control">
-                  <a class="button is-medium" @click="nextPage" :disabled="!numPages || page == numPages || rendering">
-                    <icon name="chevron-right"></icon>
-                  </a>
-                </p>
-              </div>
-            </div>
+        <div class="column main-container">
+          <div id="getStarted" class="first-sub-section content">
+            <vue-markdown :source="getStarted"></vue-markdown>
+          </div>
+
+          <hr />
+
+          <div id="manual" class="other-sub-section">
+            <pdf-slide :pdfUri="manual.uri" :pdfTitle="manual.title"></pdf-slide>
           </div>
         </div>
       </div>
@@ -45,112 +39,38 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import pdfjsLib from 'pdfjs-dist'
+import VueMarkdown from 'vue-markdown'
+import PdfSlide from './PdfSlide'
 
 export default {
   name: 'docs',
+  components: {
+    PdfSlide,
+    VueMarkdown
+  },
   data () {
     return {
-      pdf: null,
-      page: 1,
-      numPages: null,
-      rendering: false,
-      timeoutId: null,
-      pageLabel: ''
+      manual: {
+        uri: xSTATICx + 'docs/manual.pdf',
+        title: 'NEXTT Research User Manual',
+      },
+      getStarted: ''
     }
   },
-  watch: {
-    page: function (val) {
-      this.pageLabel = this.page + '/' + this.numPages
-    },
-    numPages: function (val) {
-      this.pageLabel = this.page + '/' + this.numPages
-    },
-  },
+  
   methods: {
-    renderPage () {
-      var vm = this
-      vm.rendering = true
-      vm.pdf.getPage(vm.page).then(function(page) {
-        var el = document.getElementById('docs-container')
-        var windowWidth = el.offsetWidth
-        var containerWidth = windowWidth - 264
-        if(windowWidth <= 768){
-          containerWidth = windowWidth
-        }
-        var canvas = document.getElementById('the-canvas')
-        var context = canvas.getContext('2d')
-
-        var viewport = page.getViewport(1)
-        var scale = containerWidth / viewport.width
-
-        viewport = page.getViewport(scale)
-        canvas.height = viewport.height
-        canvas.width = viewport.width
-
-        var renderContext = {
-          canvasContext: context,
-          viewport: viewport
-        }
-
-        page.render(renderContext).then(function(){
-          vm.rendering = false
-        })
-      })
-    },
-    handleResize () {
-      var vm = this
-      if(!vm.timeoutId){
-        vm.timeoutId = setTimeout(function(){
-          if(!vm.rendering){
-            vm.renderPage()
-          }
-          vm.timeoutId = null
-        }, 500)
-      }
-    },
-    previousPage () {
-      if(this.page == 1 || this.rendering){
-        return
-      }
-      this.page -= 1
-      this.renderPage()
-    },
-    nextPage () {
-      if(!this.numPages || this.page == this.numPages || this.rendering){
-        return
-      }
-      this.page += 1
-      this.renderPage()
-    },
-    setPage () {
-      var page = parseInt(this.pageLabel)
-      if(isNaN(page) || page < 1 || !this.numPages || page > this.numPages || this.rendering || page == this.page){
-        this.pageLabel = this.page + '/' + this.numPages
-      }else{
-        this.page = page
-        this.pageLabel = this.page + '/' + this.numPages
-        this.renderPage()
-      }
-    },
     scrollToElement(id){
       var el = document.getElementById(id)
-      window.scroll(0, el.offsetTop)
+      window.scroll({left: 0, top: el.offsetTop, behavior: 'smooth'})
     }
   },
   mounted () {
-    var vm = this
-    pdfjsLib.getDocument('static/slides.pdf').then(function(pdf) {
-      vm.pdf = pdf
-      vm.numPages = pdf.numPages
-      vm.renderPage()
-      window.addEventListener('resize', vm.handleResize)
+    this.$http.get(xSTATICx + 'docs/tutorial.md').then(response => {
+      this.getStarted = response.data
+    }, response => {
+      console.log('failed to get md')
     })
   },
-  beforeDestroy () {
-    window.removeEventListener('resize', this.handleResize)
-  }
 }
 </script>
 
@@ -169,8 +89,25 @@ export default {
   padding-right: 10px;
 }
 
-.page-input {
-  width: 80px;
+.main-container {
+  width: calc(100% - 300px);
+}
+
+.first-sub-section {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.other-sub-section {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -84px;
+  visibility: hidden;
 }
 
 </style>

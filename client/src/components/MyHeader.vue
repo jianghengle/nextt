@@ -32,16 +32,6 @@
             <router-link class="navbar-item" :to="'/docs'" :class="{'is-active': routePath == '/docs', 'has-text-link': routePath == '/docs'}">
               Docs
             </router-link>
-            <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a class="button is-link">
-                    <icon name="sign-in"></icon>&nbsp;
-                    Sign In
-                  </a>
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

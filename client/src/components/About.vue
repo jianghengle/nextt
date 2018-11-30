@@ -7,11 +7,11 @@
           <p class="subtitle is-3">Subtitle 3</p>
         </div>
         <div class="sponsors">
-          <img src="static/logo/un.png" class="logo">
-          <img src="static/logo/nsf.png" class="logo">
-          <img src="static/logo/ohio.png" class="ohio-logo">
-          <img src="static/logo/lincoln.png" class="long-logo">
-          <img src="static/logo/usignite.png" class="long-logo">
+          <img src="static/logos/un.png" class="logo">
+          <img src="static/logos/nsf.png" class="logo">
+          <img src="static/logos/ohio.png" class="ohio-logo">
+          <img src="static/logos/lincoln.png" class="long-logo">
+          <img src="static/logos/usignite.png" class="long-logo">
         </div>
         <div class="content">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quid attinet de rebus tam apertis plura requirere? An, partus ancillae sitne in fructu habendus, disseretur inter principes civitatis, P. Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Sed tamen enitar et, si minus multa mihi occurrent, non fugiam ista popularia. Sed quia studebat laudi et dignitati, multum in virtute processerat. Qui igitur convenit ab alia voluptate dicere naturam proficisci, in alia summum bonum ponere? Sed ad bona praeterita redeamus. Haeret in salebra. Duo Reges: constructio interrete. Sint modo partes vitae beatae. Primum quid tu dicis breve? Quod autem satis est, eo quicquid accessit, nimium est;</p>
@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="image-container has-text-centered">
-        <img src="static/concept.png" class="concept-image">
+        <img src="static/images/concept.png" class="concept-image">
       </div>
     </div>
   </div>
