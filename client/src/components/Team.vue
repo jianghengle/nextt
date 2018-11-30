@@ -5,7 +5,28 @@
         Team
       </div>
       <div class="content">
-        <p>Non risu potius quam oratione eiciendum? Legimus tamen Diogenem, Antipatrum, Mnesarchum, Panaetium, multos alios in primisque familiarem nostrum Posidonium. Sed fac ista esse non inportuna; De vacuitate doloris eadem sententia erit. Quamquam haec quidem praeposita recte et reiecta dicere licebit. Scrupulum, inquam, abeunti; Quo tandem modo? Videmus in quodam volucrium genere non nulla indicia pietatis, cognitionem, memoriam, in multis etiam desideria videmus.</p>
+        <nav class="level is-mobile">
+          <div class="level-item has-text-centered">
+            <div>
+              <a href="https://nebraska.edu/"><img src="static/logos/un.png" width="150"></a>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <a href="https://www.osu.edu/"><img src="static/logos/ohio.png" width="135" class="ohio-logo"></a>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <a href="https://www.gatech.edu/"><img src="static/logos/gt.png" width="250"></a>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <a href="https://https://www.buffalo.edu//"><img src="static/logos/ub.png" width="135" class="ub-logo"></a>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
   </div>

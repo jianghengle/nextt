@@ -23,15 +23,22 @@
           </aside>
         </div>
         <div class="column main-container">
+
           <div id="getStarted" class="first-sub-section content">
             <vue-markdown :source="getStarted"></vue-markdown>
           </div>
 
           <hr />
-
+          
           <div id="manual" class="other-sub-section">
-            <pdf-slide :pdfUri="manual.uri" :pdfTitle="manual.title"></pdf-slide>
+            <h4 class="title is-3">NEXTT Research User Manual
+              <a href="https://docs.google.com/presentation/d/e/2PACX-1vRhhF88xfiTUtSKStxH_sRFo_I7ejLn1gpMTXSzO8-yZ8f5zX5nbQ7JZ07ABlIqjFZGpLF3O8V9MR8L/pub?start=false&loop=false&delayms=3000" class="button is-text" download>link</a>
+            </h4>
+            <div class="aspect-ratio">
+              <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRhhF88xfiTUtSKStxH_sRFo_I7ejLn1gpMTXSzO8-yZ8f5zX5nbQ7JZ07ABlIqjFZGpLF3O8V9MR8L/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -40,20 +47,14 @@
 
 <script>
 import VueMarkdown from 'vue-markdown'
-import PdfSlide from './PdfSlide'
 
 export default {
   name: 'docs',
   components: {
-    PdfSlide,
     VueMarkdown
   },
   data () {
     return {
-      manual: {
-        uri: xSTATICx + 'docs/manual.pdf',
-        title: 'NEXTT Research User Manual',
-      },
       getStarted: ''
     }
   },
@@ -103,11 +104,18 @@ export default {
   margin-bottom: 50px;
 }
 
-.anchor {
-  display: block;
+.aspect-ratio {
   position: relative;
-  top: -84px;
-  visibility: hidden;
+  width: 100%;
+  height: 0;
+  padding-bottom: 61%;
+}
+
+.aspect-ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0; top: 0;
 }
 
 </style>

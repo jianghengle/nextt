@@ -4,19 +4,18 @@
       <div class="text-container">
         <div class="title-container">
           <p class="title is-1">NEXTT</p>
-          <p class="subtitle is-3">Subtitle 3</p>
         </div>
         <div class="sponsors">
           <img src="static/logos/un.png" class="logo">
-          <img src="static/logos/nsf.png" class="logo">
+          <img src="static/logos/lincoln.png" class="city-logo">
           <img src="static/logos/ohio.png" class="ohio-logo">
-          <img src="static/logos/lincoln.png" class="long-logo">
+          <img src="static/logos/gt.png" class="long-logo">
+          <img src="static/logos/ub.png" class="ub-logo">
+          <img src="static/logos/nsf.png" class="logo">
           <img src="static/logos/usignite.png" class="long-logo">
         </div>
         <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quid attinet de rebus tam apertis plura requirere? An, partus ancillae sitne in fructu habendus, disseretur inter principes civitatis, P. Mene ergo et Triarium dignos existimas, apud quos turpiter loquare? Sed tamen enitar et, si minus multa mihi occurrent, non fugiam ista popularia. Sed quia studebat laudi et dignitati, multum in virtute processerat. Qui igitur convenit ab alia voluptate dicere naturam proficisci, in alia summum bonum ponere? Sed ad bona praeterita redeamus. Haeret in salebra. Duo Reges: constructio interrete. Sint modo partes vitae beatae. Primum quid tu dicis breve? Quod autem satis est, eo quicquid accessit, nimium est;</p>
-          
-          <p>Non risu potius quam oratione eiciendum? Legimus tamen Diogenem, Antipatrum, Mnesarchum, Panaetium, multos alios in primisque familiarem nostrum Posidonium. Sed fac ista esse non inportuna; De vacuitate doloris eadem sententia erit. Quamquam haec quidem praeposita recte et reiecta dicere licebit. Scrupulum, inquam, abeunti; Quo tandem modo? Videmus in quodam volucrium genere non nulla indicia pietatis, cognitionem, memoriam, in multis etiam desideria videmus.</p>
+          <p>The NEXTT pilot testbed is a noval, Cloud-Radio Access Network (C-RAN)-based experimental wireless network. The testbed contains three major components: Software Defined Distribution Units (SD-DU) (a.k.a Cognitive Remote Radio Heads), fiber Ethernet-based fronthaul network, and cloud-based baseband processing and data storage. Currently, there are 5 SD-DUs deployed at 4 buildings on UNL campus and 1 street light in Lincoln city. Via Fiber Ethernet-based fronthaul network, these SD-DUs are connected to Holland Computing Center (HCC), where baseband processing and data storage are taken place. The core of SD-DU is a high-end 4x4 MIMO Software Defined Radio (SDR) Transceiver, Ettus N310, which can be tuned to any sub-6GHz frequency. The NEXTT pilot testbed allows researchers to access its radio sites and computing resources remotely.</p>
         </div>
       </div>
       <div class="image-container has-text-centered">
@@ -64,9 +63,9 @@ export default {
 }
 
 .sponsors {
-  width: 310px;
+  width: 370px;
   float: right;
-  text-align: right;
+  text-align: left;
 }
 
 .logo {
@@ -74,8 +73,22 @@ export default {
 }
 
 .ohio-logo {
-  width: 90px;
-  margin-left: 7px;
+  width: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.city-logo {
+  width: 170px;
+}
+
+.ub-logo {
+  width: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+  top: -10px;
 }
 
 .long-logo {

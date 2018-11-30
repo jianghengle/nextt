@@ -13,9 +13,7 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
-var target = process.env.TARGET
 var googleKey = process.env.GOOGLE_KEY
-var ipstackKey = process.env.IPSTACK_KEY
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {

@@ -9,7 +9,7 @@
       "status": 100,
       "description": "UHF Antenna Array Replaced, GPS Antenna Installed.",
       "tests": [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 0],
-      "image": "static/images/ofh.png"
+      "image": "https://github.com/jianghengle/nextt/raw/master/client/static/images/ofh.png"
     },
     {
       "name": "Scott Engineering Center",
@@ -19,7 +19,7 @@
       "status": 100,
       "description": "Radio Antenna Head/Cable Conduit/RF Cable done. Fiber/Ethernet (media converter) installed.",
       "tests": [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 0],
-      "image": "static/images/wsec.png"
+      "image": "https://github.com/jianghengle/nextt/raw/master/client/static/images/wsec.png"
     },
     {
       "name": "Andersen Hall",
@@ -29,7 +29,7 @@
       "status": 100,
       "description": "Antenna head installed.",
       "tests": [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 0],
-      "image": "static/images/ah.png"
+      "image": "https://github.com/jianghengle/nextt/raw/master/client/static/images/ah.png"
     },
     {
       "name": "Traffic Light",
@@ -39,7 +39,7 @@
       "status": 90,
       "description": "Separated radio and antenna enclosures hanging on pole.",
       "tests": [100, 100, 100, 100, 100, 90, 97, 50, 100, 100, 100, 100, 100, 0, 0, 0, 0],
-      "image": "static/images/avtl.png"
+      "image": "https://github.com/jianghengle/nextt/raw/master/client/static/images/avtl.png"
     },
     {
       "name": "Food Innovation Center",
@@ -49,7 +49,7 @@
       "status": 100,
       "description": "Fiber & 6U Cabinet installed.",
       "tests": [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 0],
-      "image": "static/images/fic.png"
+      "image": "https://github.com/jianghengle/nextt/raw/master/client/static/images/fic.png"
     },
     {
       "name": "NEMA",
@@ -59,7 +59,7 @@
       "status": 10,
       "description": "mmWave Link to FIC",
       "tests": [50, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null],
-      "image": "static/images/nema.png"
+      "image": "https://github.com/jianghengle/nextt/raw/master/client/static/images/nema.png"
     },
     {
       "name": "Fronthaul Fiber Hub",
@@ -96,8 +96,6 @@
     "Transceiver Installation",
     "Antenna Installation",
     "Connectivity Test",
-    "Site Test",
-    "Cyber Security",
-    "MISC"
+    "Site Test"
   ]
 }

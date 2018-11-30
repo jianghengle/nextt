@@ -84,7 +84,7 @@ export default {
       }
       this.$nextTick(function () {
         var el = document.getElementById(id)
-        window.scroll(0, (el.offsetTop - 84))
+        window.scroll({left:0, top: (el.offsetTop - 84), behavior: 'smooth'})
       })
     },
     getScrollPositions(){
