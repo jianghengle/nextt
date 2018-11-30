@@ -54,7 +54,7 @@
             <tr v-for="(t, i) in tests" :key="'tr-'+i">
               <th class="no-break">{{t}}</th>
               <td v-for="(s, j) in sites" :key="'td-'+i+'-'+j" class="has-text-centered"
-                :class="{'background-green': s.tests[i]==100, 'background-red': s.tests[i]!=100 && s.tests[i]!=null, 'background-gray': s.tests[i]==null}">
+                :style="{'background-color': s.testColors[i]}">
                 {{s.tests[i] == null ? '-' : s.tests[i]}}
               </td>
             </tr>
@@ -66,105 +66,23 @@
 </template>
 
 <script>
-import Vue from 'vue'
 
-var ofh = {
-  name: 'Oldfather Hall', label: 'OF', location: {lat: 40.819745, lng: -96.703485},
-  equipments: 'Radio (2x10G SFP+), GPS & UHF Antennas',
-  status: 99,
-  description: 'UHF Antenna Array Replaced, GPS Antenna Installed.',
-  tests: [100, 100, 100, 100, 100, 100, 100, 100, 80, 100, 100, 100, 80, 0, 20],
-  image: 'static/images/ofh.png'
-}
-
-var wesc = {
-  name: 'Scott Engineering Center', label: 'SE', location: {lat: 40.822033, lng: -96.697565},
-  equipments: 'Radio Antenna Head/Cable Conduit/RF Cable and Fiber/Ethernet (media converter)',
-  status: 95,
-  description: 'Radio Antenna Head/Cable Conduit/RF Cable done. Fiber/Ethernet (media converter) installed.',
-  tests: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 0, 0],
-  image: 'static/images/wsec.png'
-}
-
-var ah = {
-  name: 'Andersen Hall', label: 'AH', location: {lat: 40.815343, lng: -96.699225},
-  equipments: 'Antenna Head, Cabinet for radio, and Fiber',
-  status: 90,
-  description: 'Antenna head installed.',
-  tests: [100, 100, 100, 100, 100, 100, 100, 100, 60, 100, 100, 0, 0, 0, 0],
-  image: 'static/images/ah.png'
-}
-
-var avtl = {
-  name: 'Traffic Light ', label: 'TL', location: {lat: 40.820990, lng: -96.692461},
-  equipments: 'Separated radio and antenna enclosures',
-  status: 15,
-  description: 'Separated radio and antenna enclosures hanging on pole.',
-  tests: [100, 100, 90, 80, 100, 90, 0, 0, 80, 0, 0, 0, 0, 0, 0],
-  image: 'static/images/avtl.png'
-}
-
-var fic = {
-  name: 'Food Innovation Center', label: 'FI', location: {lat: 40.831608, lng: -96.692695},
-  equipments: 'Fiber & 6U Cabinet',
-  status: 90,
-  description: 'Fiber & 6U Cabinet installed.',
-  tests: [100, 100, 100, 100, 100, 100, 100, 100, 60, 100, 100, 0, 0, 0, 0],
-  image: 'static/images/fic.png'
-}
-
-var nema = {
-  name: 'NEMA', label: 'NE', location: {lat: 40.831099, lng: -96.701749},
-  equipments: 'mmWave Link',
-  status: 0,
-  description: 'mmWave Link to FIC',
-  tests: [100, 100, 100, 100, 100, 100, 100, 100, 60, 100, 100, 0, 0, 0, 0],
-  image: 'static/images/nema.png'
-}
-
-var hub = {
-  name: 'Fronthaul Fiber Hub', label: 'HB', location: {lat: 40.823006, lng: -96.697363},
-  equipments: 'Switch, 4U server, FPGA board',
-  status: 80,
-  description: 'Switch, 4U server, FPGA board Deployed.',
-  tests: [50, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null]
-}
-
-var hcc = {
-  name: 'Holland Computing Center', label: 'HC', location: {lat: 40.819632, lng: -96.705553},
-  equipments: 'Data Center',
-  status: 25,
-  description: 'Holland Computing Center as the Data center.',
-  tests: [100, 100, 100, null, 30, 20, null, null, 20, null, null, null, null, 100, 0]
-}
-
-var tests = ['Site Planning & Selection', 'Site Investigation', 'Deployment Solution', 'Enclosure Design',
-  'Major Equipments', 'Materials & Supplies', 'Cable Conduit', 'Fiber and power Installation', 'Fiber Backbone Routing',
-  'Transceiver Installation', 'Antenna Installation', 'Connectivity Test', 'Site Test', 'Cyber Security', 'MISC'
-]
-
-var links = [
-  {link: [fic, nema], m: 776, ft: 2544, offset: [0, 0]},
-  {link: [fic, wesc], m: 1160, ft: 3800, offset: [200, 0]},
-  {link: [wesc, ofh], m: 563, ft: 1848, offset: [0, -100]},
-  {link: [wesc, avtl], m: 456, ft: 1527, offset: [150, -100]},
-  {link: [wesc, ah], m: 774, ft: 2541, offset: [300, 300]},
-  {link: [ofh, avtl], m: 939, ft: 3083, offset: [-800, 600]},
-  {link: [ofh, ah], m: 607, ft: 1993, offset: [-600, 100]},
-  {link: [avtl, ah], m: 858, ft: 2817, offset: [1000, 400]},
-]
-
-var green = '#4571e1'
+var blue = '#4571e1'
+var green = '#aed9a3'
+var lightGreen = '#d5ebd1'
+var yellow = '#fff2c7'
 var red = '#f54160'
+var grey = '#999999'
+
 
 export default {
   name: 'status',
   data () {
     return {
       center: {lat: 40.819621, lng: -96.702347},
-      sites: [ofh, wesc, ah, avtl, fic, nema, hub, hcc],
-      tests: tests,
-      links: links,
+      sites: [],
+      tests: [],
+      links: [],
       infoOptions: {
         pixelOffset: {
           width: 0,
@@ -192,7 +110,7 @@ export default {
           id: s.name,
           icon: {
             path: 'M255 803 c-16 -105 -40 -160 -145 -328 -38 -60 -74 -131 -80 -157 -22 -88 23 -200 102 -251 150 -97 336 -21 378 154 18 72 1 124 -80 254 -105 168 -129 223 -145 328 -3 20 -10 37 -15 37 -5 0 -12 -17 -15 -37z',
-            fillColor: s.status >= 60 ? green : red,
+            fillColor: s.status >= 60 ? blue : red,
             fillOpacity: 1,
             strokeColor: 'white',
             strokeWeight: 1,
@@ -267,8 +185,50 @@ export default {
     }
   },
   mounted () {
-    this.makeMarkers()
-    this.makePolylines()
+    this.$http.get(xSTATICx + 'sites.json').then(response => {
+      var resp = response.body
+      var sites = resp.sites
+      sites.forEach(function(site){
+        site.testColors = site.tests.map(function(t){
+          if(t === null)
+            return grey
+          if(t == 100)
+            return green
+          if(t >= 90)
+            return lightGreen
+          if(t >= 20)
+            return yellow
+          return red
+        })
+      })
+      this.sites = sites
+      this.tests = resp.tests
+
+      var ofh = this.sites[0]
+      var wesc = this.sites[1]
+      var ah = this.sites[2]
+      var avtl = this.sites[3]
+      var fic = this.sites[4]
+      var nema = this.sites[5]
+      var hub = this.sites[6]
+      var hcc = this.sites[7]
+
+      this.links = [
+        {link: [fic, nema], m: 776, ft: 2544, offset: [0, 0]},
+        {link: [fic, wesc], m: 1160, ft: 3800, offset: [200, 0]},
+        {link: [wesc, ofh], m: 563, ft: 1848, offset: [0, -100]},
+        {link: [wesc, avtl], m: 456, ft: 1527, offset: [150, -100]},
+        {link: [wesc, ah], m: 774, ft: 2541, offset: [300, 300]},
+        {link: [ofh, avtl], m: 939, ft: 3083, offset: [-800, 600]},
+        {link: [ofh, ah], m: 607, ft: 1993, offset: [-600, 100]},
+        {link: [avtl, ah], m: 858, ft: 2817, offset: [1000, 400]},
+      ]
+
+      this.makeMarkers()
+      this.makePolylines()
+    }, response => {
+      console.log('failed to get json')
+    })
   }
 }
 </script>
@@ -286,18 +246,6 @@ export default {
 
 .no-break {
   white-space: nowrap;
-}
-
-.background-green {
-  background-color: #b6d7a4;
-}
-
-.background-red {
-  background-color: #f2cdcc;
-}
-
-.background-gray {
-  background-color: #999999;
 }
 
 .clickable {

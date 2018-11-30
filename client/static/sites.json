@@ -1,0 +1,103 @@
+{
+  "sites":
+  [
+    {
+      "name": "Oldfather Hall",
+      "label": "OF",
+      "location": { "lat": 40.819745, "lng": -96.703485 },
+      "equipments": "Radio (2x10G SFP+), GPS & UHF Antennas",
+      "status": 100,
+      "description": "UHF Antenna Array Replaced, GPS Antenna Installed.",
+      "tests": [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 0],
+      "image": "static/images/ofh.png"
+    },
+    {
+      "name": "Scott Engineering Center",
+      "label": "SE",
+      "location": { "lat": 40.822033, "lng": -96.697565 },
+      "equipments": "Radio Antenna Head/Cable Conduit/RF Cable and Fiber/Ethernet (media converter)",
+      "status": 100,
+      "description": "Radio Antenna Head/Cable Conduit/RF Cable done. Fiber/Ethernet (media converter) installed.",
+      "tests": [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 0],
+      "image": "static/images/wsec.png"
+    },
+    {
+      "name": "Andersen Hall",
+      "label": "AH",
+      "location": { "lat": 40.815343, "lng": -96.699225 },
+      "equipments": "Antenna Head, Cabinet for radio, and Fiber",
+      "status": 100,
+      "description": "Antenna head installed.",
+      "tests": [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 0],
+      "image": "static/images/ah.png"
+    },
+    {
+      "name": "Traffic Light",
+      "label": "TL",
+      "location": { "lat": 40.820990, "lng": -96.692461 },
+      "equipments": "Separated radio and antenna enclosures",
+      "status": 90,
+      "description": "Separated radio and antenna enclosures hanging on pole.",
+      "tests": [100, 100, 100, 100, 100, 90, 97, 50, 100, 100, 100, 100, 100, 0, 0, 0, 0],
+      "image": "static/images/avtl.png"
+    },
+    {
+      "name": "Food Innovation Center",
+      "label": "FI",
+      "location": { "lat": 40.831608, "lng": -96.692695 },
+      "equipments": "Fiber & 6U Cabinet",
+      "status": 100,
+      "description": "Fiber & 6U Cabinet installed.",
+      "tests": [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 0],
+      "image": "static/images/fic.png"
+    },
+    {
+      "name": "NEMA",
+      "label": "NE",
+      "location": { "lat": 40.831099, "lng": -96.701749 },
+      "equipments": "mmWave Link",
+      "status": 10,
+      "description": "mmWave Link to FIC",
+      "tests": [50, 0, 0, 0, 0, 0, null, null, null, null, null, null, null, null, null, null, null],
+      "image": "static/images/nema.png"
+    },
+    {
+      "name": "Fronthaul Fiber Hub",
+      "label": "HB",
+      "location": { "lat": 40.823006, "lng": -96.697363 },
+      "equipments": "Switch, 4U server, FPGA board",
+      "status": 50,
+      "description": "Switch, 4U server, FPGA board Deployed.",
+      "tests": [100, 100, 100, null, 100, 100, null, 90, 100, 10, null, null, null, 20, 10, 20, 0]
+    },
+    {
+      "name": "Holland Computing Center",
+      "label": "HC",
+      "location": { "lat": 40.819632, "lng": -96.705553 },
+      "equipments": "Data Center",
+      "status": 60,
+      "description": "Holland Computing Center as the Data center.",
+      "tests": [100, 100, 100, null, 30, 20, null, null, 20, null, null, null, null, null, null, 100, 0]
+    }
+  ],
+  "tests":
+  [
+    "Site Planning & Selection",
+    "Site Investigation",
+    "Deployment Solution",
+    "Enclosure Design",
+    "Major Equipments",
+    "Materials & Supplies",
+    "Cable Conduit",
+    "Fiber and power Installation",
+    "Fiber 0",
+    "Fiber 1",
+    "Mgmt Port RJ45",
+    "Transceiver Installation",
+    "Antenna Installation",
+    "Connectivity Test",
+    "Site Test",
+    "Cyber Security",
+    "MISC"
+  ]
+}

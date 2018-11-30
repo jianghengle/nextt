@@ -103,14 +103,14 @@ In your reserved time on NEXTT, start GNURadio in your Ubuntu VM
 ```
 sudo gnuradio-companion
 ```
-and run the exemplary spectrum sensing code [Distributed_Monitor.grc](./Distributed_Monitor.grc)
+and run the exemplary spectrum sensing code [Distributed_Monitor.grc](https://github.com/jianghengle/nextt/raw/master/client/static/docs/Distribute_Monitor.grc)
 
 The program monitors 433-435MHz as shown here
-![Waterfall](./waterfall_433.png)
-![Spectrum](./spectrum_433.png)
+![Waterfall](https://github.com/jianghengle/nextt/raw/master/client/static/docs/waterfall_433.png)
+![Spectrum](https://github.com/jianghengle/nextt/raw/master/client/static/docs/spectrum_433.png)
 
 ## Step 5: Create and Run your own GNURadio program <a name="program" class="anchor"></a>
 You can create your own GNURadio program to collect IQ data from distributed sites, run your program and save data files to your VM. 
 
 ## Step 6: Run your offline processing algorithms  <a name="process" class="anchor"></a>
-If you decided to run offline processing, e.g. distributed spectrum sensing, you can do the following. Once you collected the data files from the GNURadio program, you could download them to your work directory on HCC clusters, such as [Crane](crane.unl.edu) and [Tuskers](tuskers.unl.edu), to process them offline. Please refer to the [HCC documentation](https://hcc-docs.unl.edu/display/HCCDOC/HCC+Documentation) for how to access and use HCC clusters. You can also download your data to your local computers. Note that the data files stored on the HCC clusters will only be kept for 6 months.
+If you decided to run offline processing, e.g. distributed spectrum sensing, you can do the following. Once you collected the data files from the GNURadio program, you could download them to your work directory on HCC clusters, such as [Crane](https://crane.unl.edu) and [Tuskers](https://tuskers.unl.edu), to process them offline. Please refer to the [HCC documentation](https://hcc-docs.unl.edu/display/HCCDOC/HCC+Documentation) for how to access and use HCC clusters. You can also download your data to your local computers. Note that the data files stored on the HCC clusters will only be kept for 6 months.
