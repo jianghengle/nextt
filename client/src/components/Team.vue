@@ -13,6 +13,11 @@
           </div>
           <div class="level-item has-text-centered">
             <div>
+              <a href="http://www.lincoln.ne.gov/"><img src="static/logos/lincoln.png" width="250"></a>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
               <a href="https://www.osu.edu/"><img src="static/logos/ohio.png" width="135" class="ohio-logo"></a>
             </div>
           </div>

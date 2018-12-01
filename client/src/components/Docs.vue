@@ -22,7 +22,7 @@
             </ul>
           </aside>
         </div>
-        <div class="column main-container">
+        <div class="column" :class="{'main-container': windowWidth > 768, 'main-container-mobile': windowWidth <= 768}">
 
           <div id="getStarted" class="first-sub-section content">
             <vue-markdown :source="getStarted"></vue-markdown>
@@ -32,10 +32,10 @@
           
           <div id="manual" class="other-sub-section">
             <h4 class="title is-3">NEXTT Research User Manual
-              <a href="https://docs.google.com/presentation/d/e/2PACX-1vRhhF88xfiTUtSKStxH_sRFo_I7ejLn1gpMTXSzO8-yZ8f5zX5nbQ7JZ07ABlIqjFZGpLF3O8V9MR8L/pub?start=false&loop=false&delayms=3000" class="button is-text" download>link</a>
+              <a href="https://docs.google.com/presentation/d/e/2PACX-1vSpgKrOq4RBkDWGIbnzhKNowDvYFhEJf4GXObrTfpGN_JXJXK45kBbYHhtazOmeDNsPsj2RqJM8gbcD/embed?start=false&loop=false&delayms=3000" class="button is-text" download>link</a>
             </h4>
             <div class="aspect-ratio">
-              <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRhhF88xfiTUtSKStxH_sRFo_I7ejLn1gpMTXSzO8-yZ8f5zX5nbQ7JZ07ABlIqjFZGpLF3O8V9MR8L/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+              <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSpgKrOq4RBkDWGIbnzhKNowDvYFhEJf4GXObrTfpGN_JXJXK45kBbYHhtazOmeDNsPsj2RqJM8gbcD/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
             </div>
           </div>
 
@@ -55,6 +55,7 @@ export default {
   },
   data () {
     return {
+      windowWidth: 0,
       getStarted: ''
     }
   },
@@ -63,6 +64,9 @@ export default {
     scrollToElement(id){
       var el = document.getElementById(id)
       window.scroll({left: 0, top: el.offsetTop, behavior: 'smooth'})
+    },
+    handleResize () {
+      this.windowWidth = window.innerWidth
     }
   },
   mounted () {
@@ -71,7 +75,13 @@ export default {
     }, response => {
       console.log('failed to get md')
     })
+
+    this.windowWidth = window.innerWidth
+    window.addEventListener('resize', this.handleResize)
   },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.handleResize)
+  }
 }
 </script>
 
@@ -92,6 +102,10 @@ export default {
 
 .main-container {
   width: calc(100% - 300px);
+}
+
+.main-container-mobile {
+  width: 100%;
 }
 
 .first-sub-section {
