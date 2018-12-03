@@ -3,7 +3,7 @@
   [
     {
       "name": "Oldfather Hall",
-      "label": "OF",
+      "label": "OFH",
       "location": { "lat": 40.819745, "lng": -96.703485 },
       "equipments": "Radio (2x10G SFP+), GPS & UHF Antennas",
       "status": 100,
@@ -13,7 +13,7 @@
     },
     {
       "name": "Scott Engineering Center",
-      "label": "SE",
+      "label": "SEC",
       "location": { "lat": 40.822033, "lng": -96.697565 },
       "equipments": "Radio Antenna Head/Cable Conduit/RF Cable and Fiber/Ethernet (media converter)",
       "status": 100,
@@ -43,7 +43,7 @@
     },
     {
       "name": "Food Innovation Center",
-      "label": "FI",
+      "label": "FIC",
       "location": { "lat": 40.831608, "lng": -96.692695 },
       "equipments": "Fiber & 6U Cabinet",
       "status": 100,
@@ -53,7 +53,7 @@
     },
     {
       "name": "NEMA",
-      "label": "NE",
+      "label": "NEMA",
       "location": { "lat": 40.831099, "lng": -96.701749 },
       "equipments": "mmWave Link",
       "status": 10,
@@ -63,7 +63,7 @@
     },
     {
       "name": "Fronthaul Fiber Hub",
-      "label": "HB",
+      "label": "Hub",
       "location": { "lat": 40.823006, "lng": -96.697363 },
       "equipments": "Switch, 4U server, FPGA board",
       "status": 50,
@@ -72,7 +72,7 @@
     },
     {
       "name": "Holland Computing Center",
-      "label": "HC",
+      "label": "HCC",
       "location": { "lat": 40.819632, "lng": -96.705553 },
       "equipments": "Data Center",
       "status": 60,
