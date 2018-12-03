@@ -1,4 +1,4 @@
-# Getting Started on NEXTT
+# Getting Started on NEXTT Testbed
 
 1. [Setup HCC accounts](#account)
 2. [Create a Virtual Machine instance on Anvil](#anvil)
