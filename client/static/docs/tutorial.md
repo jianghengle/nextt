@@ -8,7 +8,8 @@
 6. [Run your offline processing algorithms](#process)
 
 ## Step 1: Setup HCC Accounts <a name="account" class="anchor"></a>
-Please follow [instructions](https://hcc.unl.edu/new-user-request) to signup your new account. Please select ```nextt``` as group. Once this is done, apply access to HCC Anvil cloud follow this [instruction](https://hcc.unl.edu/request-anvil-access),
+1. If you don't have an HCC account, please signup [here](https://hcc.unl.edu/new-user-request) by selecting ```nextt``` as the group. 
+2. Once your HCC account is ready, apply access to HCC Anvil cloud from [here](https://hcc.unl.edu/request-anvil-access).
 
 ## Step 2: Create a Virtual Machine instance on Anvil <a name="anvil" class="anchor"></a>
 Create an Virtual Machine (VM) instance, e.g. Ubuntu 16.04 LTS, on Anvil following this [link](https://hcc-docs.unl.edu/display/HCCDOC/Anvil%3A+HCC%27s+Cloud). 
