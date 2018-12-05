@@ -103,7 +103,7 @@ export default {
             text: s.label.toString(),
             color: 'white',
             fontFamily: 'Arial, Helvetica, sans-serif',
-            fontSize: '14px',
+            fontSize: '12px',
             fontWeight: 'bold'
           },
           position: s.location,
