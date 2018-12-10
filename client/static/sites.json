@@ -38,7 +38,7 @@
       "equipments": "Separated radio and antenna enclosures",
       "status": 90,
       "description": "Separated radio and antenna enclosures hanging on pole.",
-      "tests": [100, 100, 100, 100, 100, 90, 97, 50, 100, 100, 100, 100, 100, 0, 0, 0, 0],
+      "tests": [100, 100, 100, 100, 100, 100, 100, 50, 100, 100, 100, 100, 100, 50, 50, 0, 0],
       "image": "https://github.com/jianghengle/nextt/raw/master/client/static/images/avtl.png"
     },
     {
