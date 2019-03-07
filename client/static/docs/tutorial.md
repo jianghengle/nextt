@@ -111,11 +111,14 @@ Alternatively, you can login VM with [x2go client](https://hcc.unl.edu/docs/guid
 QT_X11_NO_MITSHM=1
 ```
 
-Start GNURadio in your Ubuntu VM
+Download the exemplary spectrum sensing code, and start GNURadio in your Ubuntu VM
 ```
+mkdir demo
+cd demo
+wget https://github.com/jianghengle/nextt/raw/master/client/static/docs/Distribute_Monitor.grc
 sudo gnuradio-companion
 ```
-and run the exemplary spectrum sensing code [Distributed_Monitor.grc](https://github.com/jianghengle/nextt/raw/master/client/static/docs/Distribute_Monitor.grc)
+and run the exemplary spectrum sensing code [Distributed_Monitor.grc](https://github.com/jianghengle/nextt/raw/master/client/static/docs/Distribute_Monitor.grc) in GNURadio GUI.
 
 The program monitors 433-435MHz as shown here
 ![Waterfall](https://github.com/jianghengle/nextt/raw/master/client/static/docs/waterfall_433.png)
