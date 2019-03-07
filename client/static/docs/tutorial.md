@@ -106,7 +106,10 @@ In your reserved time on NEXTT, login Ubuntu VM with GUI enabled
 ```
 ssh -Y ubuntu@your_ip_address
 ```
-Alternatively, you can login VM with [x2go client](https://hcc.unl.edu/docs/guides/anvil/connecting_to_linux_instances_using_x2go/).
+Alternatively, you can login VM with [x2go client](https://hcc.unl.edu/docs/guides/anvil/connecting_to_linux_instances_using_x2go/). To avoid GUI error when running GNURadio, add following line to `/etc/environment`
+```
+QT_X11_NO_MITSHM=1
+```
 
 Start GNURadio in your Ubuntu VM
 ```
