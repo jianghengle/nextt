@@ -102,7 +102,13 @@ sudo rm -rf /usr/share/mime/application/gnuradio*
 ```
 
 ## Step 4: Run exemplary GNURadio program  <a name="example" class="anchor"></a>
-In your reserved time on NEXTT, start GNURadio in your Ubuntu VM
+In your reserved time on NEXTT, login Ubuntu VM with GUI enabled
+```
+ssh -Y ubuntu@your_ip_address
+```
+Alternatively, you can login VM with [x2go client](https://hcc.unl.edu/docs/guides/anvil/connecting_to_linux_instances_using_x2go/).
+
+Start GNURadio in your Ubuntu VM
 ```
 sudo gnuradio-companion
 ```
